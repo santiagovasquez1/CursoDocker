@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql-compose
+    ports:
+      - "3306:3306"
+    env_file:
+      - common.env
+    # environment:
+    #   - "MYSQL_ROOT_PASSWORD=1234"
+    volumes:
+      - "vol-mysql:/var/lib/mysql"
+    networks:
+      - network-test
+volumes:
+  vol-mysql:
+networks:
+  network-test:
+    

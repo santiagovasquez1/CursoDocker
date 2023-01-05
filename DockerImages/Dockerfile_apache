@@ -1,0 +1,11 @@
+FROM centos:centos7
+LABEL version=1.0
+LABEL vendor="Santiago Vasquez Gómez"
+RUN yum install httpd -y
+WORKDIR /var/www
+COPY beryllium html/
+ENV contenido prueba
+VOLUME /var/www/html
+RUN echo "$contenido" > /var/www/html/prueba.html
+COPY run.sh /run.sh
+CMD sh /run.sh

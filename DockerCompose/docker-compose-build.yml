@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    container_name: web-test
+    image: web-test
+    # Busca por defecto el dockerfile en la raiz
+    build: 
+      context: .
+      dockerfile: dockerfile-centos
